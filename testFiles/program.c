@@ -1,13 +1,13 @@
-
-
 int main() {
-    char username[50] = "user";
-    char password[50] = "pass";
-
-    if (strcmp(username, "user") == 0 && strcmp(password, "pass") == 0) {
-   
+    char username[50];
+    char password[50];
+    int success = 0;
+    
+    if (username[0] == 'u' && password[0] == 'p') {
+        success = 1;
     } else {
-      
+        success = 0;
     }
-    return 0;
+
+    return success;
 }
