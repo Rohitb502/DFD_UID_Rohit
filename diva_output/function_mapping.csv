@@ -1,0 +1,6 @@
+"function_1_name","function_2_name","nature_of_mapping","parameters_passed","layer_of_abstraction_function_1","layer_of_abstraction_function_2"
+"```csv","","","","",""
+"InputValidation3Activity","push","Data Dependency","cTxt","UI Layer","Functionality Layer"
+"push","Djni","Control Dependency","","Functionality Layer","Functionality Layer"
+"Djni","initiateLaunchSequence","Data Dependency","","Functionality Layer","Functionality Layer"
+"```","","","","",""
