@@ -1,0 +1,66 @@
+function1_name,function2_name,file_name_function1,file_name_function2,parameter_passed,level_of_abstraction_function1,level_of_abstraction_function2,mapping_type,code_function1,code_function2
+normalize_data,sum,helper.py,unknown,[['numbers']],Mid-level (Logic),Unknown,,"def normalize_data(numbers):
+    total = sum(numbers)
+    normalized = [n / total for n in numbers]
+    return normalized",
+summarize_data,sum,helper.py,unknown,[['data']],Mid-level (Logic),Unknown,,"def summarize_data(data):
+    avg = sum(data) / len(data)
+    return {""average"": avg, ""max"": max(data), ""min"": min(data)}",
+summarize_data,len,helper.py,unknown,[['data']],Mid-level (Logic),Unknown,,"def summarize_data(data):
+    avg = sum(data) / len(data)
+    return {""average"": avg, ""max"": max(data), ""min"": min(data)}",
+summarize_data,max,helper.py,unknown,[['data']],Mid-level (Logic),Unknown,,"def summarize_data(data):
+    avg = sum(data) / len(data)
+    return {""average"": avg, ""max"": max(data), ""min"": min(data)}",
+summarize_data,min,helper.py,unknown,[['data']],Mid-level (Logic),Unknown,,"def summarize_data(data):
+    avg = sum(data) / len(data)
+    return {""average"": avg, ""max"": max(data), ""min"": min(data)}",
+computePower,multiply,nativeCompute.java,nativeCompute.java,"[['result', 'base']]",Mid-level (Logic),Low-level (Utility),Direct,"computePower(int base, int exp) {
+        int result = 1;
+        for (int i = 0; i < exp; i++) {
+            result = multiply(result, base);  // JNI native call
+        }",
+processNumbers,multiply,nativeCompute.java,nativeCompute.java,"[['BinaryOperation(operandl=MemberReference(member=total, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), operandr=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=1), operator=+)', 'val']]",Mid-level (Logic),Low-level (Utility),Direct,"processNumbers(int[] arr) {
+        int total = 0;
+        for (int val : arr) {
+            total = multiply(total + 1, val); // JNI again used in logic
+        }",
+combineResults,computePower,nativeCompute.java,nativeCompute.java,"[['x', '2']]",High-level (Application),Mid-level (Logic),Direct,"combineResults(int x, int y) {
+        int power = computePower(x, 2);
+        int processed = processNumbers(new int[]{x, y, x + y}","computePower(int base, int exp) {
+        int result = 1;
+        for (int i = 0; i < exp; i++) {
+            result = multiply(result, base);  // JNI native call
+        }"
+combineResults,processNumbers,nativeCompute.java,nativeCompute.java,"[['ArrayCreator(dimensions=[None], initializer=ArrayInitializer(initializers=[MemberReference(member=x, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), MemberReference(member=y, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), BinaryOperation(operandl=MemberReference(member=x, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), operandr=MemberReference(member=y, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), operator=+)]), postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], type=BasicType(dimensions=None, name=int))']]",High-level (Application),Mid-level (Logic),Direct,"combineResults(int x, int y) {
+        int power = computePower(x, 2);
+        int processed = processNumbers(new int[]{x, y, x + y}","processNumbers(int[] arr) {
+        int total = 0;
+        for (int val : arr) {
+            total = multiply(total + 1, val); // JNI again used in logic
+        }"
+process_workflow,normalize_data,compute.py,helper.py,[],High-level (Application),Mid-level (Logic),Direct,"def process_workflow(values):
+    norm = helper.normalize_data(values)
+    summary = helper.summarize_data(norm)
+    score = (summary[""average""] + summary[""max""]) * 10
+    return score
+
+if __name__ == ""__main__"":
+    data = [2, 4, 6]
+    final_score = process_workflow(data)
+    print(""Final Score:"", final_score)","def normalize_data(numbers):
+    total = sum(numbers)
+    normalized = [n / total for n in numbers]
+    return normalized"
+process_workflow,summarize_data,compute.py,helper.py,[],High-level (Application),Mid-level (Logic),Direct,"def process_workflow(values):
+    norm = helper.normalize_data(values)
+    summary = helper.summarize_data(norm)
+    score = (summary[""average""] + summary[""max""]) * 10
+    return score
+
+if __name__ == ""__main__"":
+    data = [2, 4, 6]
+    final_score = process_workflow(data)
+    print(""Final Score:"", final_score)","def summarize_data(data):
+    avg = sum(data) / len(data)
+    return {""average"": avg, ""max"": max(data), ""min"": min(data)}"
